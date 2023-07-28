@@ -4,17 +4,11 @@ Script-Library is a collection of useful utility scripts in various programming 
 
 ## Contributing
 
-All contributions welcome! If you have any ideas for new scripts or improvements to existing ones, please feel free to fork the repository and submit a pull request with your changes.
+All contributions welcome! If you have any ideas for new scripts or improvements to existing ones, please feel free to fork the repository and submit a pull request with your changes. Appreciate all contributions, big or small!
 
-To contribute, follow these steps:
+## License
 
-1. Fork the repository to your own GitHub account.
-2. Create a new branch for your changes.
-3. Make your changes and commit them to your branch.
-4. Submit a pull request to the main branch of the repository.
-5. Wait for your changes to be reviewed and merged.
-
-appreciate all contributions, big or small!
+This repository is licensed under the MIT License. See the [LICENSE](LICENSE) file for more information.
 
 ## Files
 
@@ -66,7 +60,3 @@ It takes a step further in the initialization process by not only creating the r
 ### GitHub-RepoPopulator.ps1
 
 This PowerShell script is designed to populate each repository in a GitHub organization with a README.md file. The README file contains a 'Hello World' message, followed by a randomly generated string. This script provides an efficient way to quickly add a base README file to all repositories within an organization using GitHub API. It is particularly useful for initial repository setup, providing basic documentation across multiple repositories.
-
-## License
-
-This repository is licensed under the MIT License. See the [LICENSE](LICENSE) file for more information.
