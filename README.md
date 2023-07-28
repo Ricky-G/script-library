@@ -2,16 +2,19 @@
 
 Script-Library is a collection of useful utility scripts in various programming languages that can be used to automate common tasks. The repository includes scripts for password cracking, archive extraction, connecting to Azure DevOps APIs, connecting and executing GitHub APIs, Unzipping .tar.gz files native using .NET and much more.
 
-## Usage
+## Contributing
 
-To use any of the scripts in this repository, follow these steps:
+All contributions welcome! If you have any ideas for new scripts or improvements to existing ones, please feel free to fork the repository and submit a pull request with your changes.
 
-1. Navigate to the appropriate directory for the language you are interested in.
-2. Select the script you want to use.
-3. Read the brief description of the script's functionality and usage instructions.
-4. Run the script in your preferred environment.
+To contribute, follow these steps:
 
-If you have any issues or questions about using the scripts, please refer to the script's documentation or open an issue in the repository.
+1. Fork the repository to your own GitHub account.
+2. Create a new branch for your changes.
+3. Make your changes and commit them to your branch.
+4. Submit a pull request to the main branch of the repository.
+5. Wait for your changes to be reviewed and merged.
+
+appreciate all contributions, big or small!
 
 ## Files
 
@@ -33,11 +36,7 @@ To use this script, the user must replace "<your-process>" with the name of the 
 
 ### AzureDevOpsRepoCloner.ps1
 
-This PowerShell script retrieves the list of all projects in an Azure DevOps organization and then loops through each project to retrieve the list of repositories. For each repository, it checks if the repository exists locally and if not, it clones the repository to a local directory. The script requires the Azure CLI and Git to be installed on the machine and a Personal Access Token (PAT) with appropriate permissions to access the Azure DevOps organization. 
-
-The script also checks if the Azure CLI and Git are installed on the machine and if not, it installs them. It then checks if the Azure DevOps extension is installed and if not, it installs it. 
-
-The script clones each repository to a local directory if it doesn't exist locally. The script is designed to clone repositories for a specific project, which can be specified in the script.
+This PowerShell script retrieves the list of all projects in an Azure DevOps organization and then loops through each project to retrieve the list of repositories. For each repository, it checks if the repository exists locally and if not, it clones the repository to a local directory. The script requires the Azure CLI and Git to be installed on the machine and a Personal Access Token (PAT) with appropriate permissions to access the Azure DevOps organization. The script clones each repository to a local directory if it doesn't exist locally. The script is designed to clone repositories for a specific project, which can be specified in the script.
 
 ### AzureDevops-UniqueCommiters.ps1
 
@@ -51,19 +50,22 @@ The script reads the list of passwords from a file and then tries each password 
 
 To use this script, the user must replace the paths to the archive, passwords file, and output directory with their own paths. The user must also make sure that 7-Zip is installed on their machine and the path to the executable is correct.
 
-## Contributing
+### GitHub-BulkRepoDeleter.ps1
 
-All contributions welcome! If you have any ideas for new scripts or improvements to existing ones, please feel free to fork the repository and submit a pull request with your changes.
+This PowerShell script is used for mass deletion of repositories within a specific GitHub organization. It leverages GitHub's REST API to fetch all repositories within the organization and then proceeds to delete each one. The script implements a random delay between 2 to 5 seconds between each delete operation to prevent overloading the server with requests.
+Additionally, it outputs the status of each operation, informing whether the deletion of a specific repository was successful or not. In the case of an operation failure, the script prints the associated exception message, providing more context about the issue. 
 
-To contribute, follow these steps:
+### GitHub-BulkRepoCreator.ps1
 
-1. Fork the repository to your own GitHub account.
-2. Create a new branch for your changes.
-3. Make your changes and commit them to your branch.
-4. Submit a pull request to the main branch of the repository.
-5. Wait for your changes to be reviewed and merged.
+This PowerShell script is designed to simplify and automate the process of bulk repository creation on GitHub.
 
-appreciate all contributions, big or small!
+The script is able to create a designated number of GitHub repositories under a specific organization, following a naming pattern of 'test-repo' suffixed with a sequential number.
+
+It takes a step further in the initialization process by not only creating the repositories but also populating each one with a unique README.md file. This file contains a 'Hello World' message, followed by a randomly generated string. The script showcases an efficient way of managing large-scale operations using GitHub API, particularly useful for demo, testing, and tutorial purposes.
+
+### GitHub-RepoPopulator.ps1
+
+This PowerShell script is designed to populate each repository in a GitHub organization with a README.md file. The README file contains a 'Hello World' message, followed by a randomly generated string. This script provides an efficient way to quickly add a base README file to all repositories within an organization using GitHub API. It is particularly useful for initial repository setup, providing basic documentation across multiple repositories.
 
 ## License
 

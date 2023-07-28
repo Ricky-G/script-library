@@ -21,19 +21,25 @@ $outputDirectory = "C:\temp\output"
 # Read the passwords from the file
 $passwords = Get-Content -Path $passwordsFile
 
-# Try each password
-foreach ($password in $passwords)
-{
+# Try each password in parallel
+$passwords | ForEach-Object -Parallel {
     # Print the password that is currently being tried
-    Write-Output "Trying password: '$password'"
+    Write-Output "Trying password: '$_'"
 
     # Try to extract the archive with the current password
-    $output = & 'C:\Program Files\7-Zip\7z.exe' x "-p$password" -y $archive "-o$outputDirectory" 2>&1
+    $output = & 'C:\Program Files\7-Zip\7z.exe' x "-p$_" -y $archive "-o$outputDirectory" -bso0 -bsp0 -mmt 2>&1
 
     # Check if the operation succeeded
     if ($LASTEXITCODE -eq 0)
     {
-        Write-Output "Archive extracted successfully! Password: $password"
-        break
+        Write-Output "Archive extracted successfully! Password: $_"
+        return $_
     }
-}
+} -ThrottleLimit 5 | Select-Object -First 1
+
+# Explanation of flags used with 7-Zip:
+# -bso0: Specifies that 7-Zip should not generate any output during extraction. This can help speed up the extraction process.
+# -bsp0: Specifies that 7-Zip should not display any progress indicators during extraction. This can help speed up the extraction process.
+# -mmt: Enables multi-threading during extraction. This can help speed up the extraction process on multi-core machines.
+# -ThrottleLimit: Limits the number of parallel operations to 5. You can adjust this value to suit your machine's capabilities.
+# Select-Object -First 1: Returns only the first password that successfully extracts the archive.
