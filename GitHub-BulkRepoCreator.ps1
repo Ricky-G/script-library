@@ -26,7 +26,7 @@ if (!(Test-Path $localDir)) {
     New-Item -ItemType Directory -Path $localDir | Out-Null
 }
 
-$startIndex = 299
+$startIndex = 1
 $endIndex = 600
 
 $startIndex..$endIndex | ForEach-Object {
