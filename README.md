@@ -60,3 +60,7 @@ It takes a step further in the initialization process by not only creating the r
 ### GitHub-RepoPopulator.ps1
 
 This PowerShell script is designed to populate each repository in a GitHub organization with a README.md file. The README file contains a 'Hello World' message, followed by a randomly generated string. This script provides an efficient way to quickly add a base README file to all repositories within an organization using GitHub API. It is particularly useful for initial repository setup, providing basic documentation across multiple repositories.
+
+### SendCustomLogDataToLogAnalytics.ps1
+
+This PowerShell script is designed to send custom log data to Azure Log Analytics. It uses the Log Analytics Data Collector API to send custom log data to a Log Analytics workspace. The script requires a Log Analytics workspace ID and a Log Analytics workspace key. The script also requires the name of the log type and the log data to be sent to the workspace. The script can be used to send custom log data to Log Analytics.
