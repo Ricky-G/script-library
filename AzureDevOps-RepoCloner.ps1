@@ -35,7 +35,7 @@ if ($null -eq $DevOpsExtension) {
 
 $Projects = az devops project list --organization $Organization --query 'value[].name' -o tsv
 foreach ($Proj in $Projects) {
-    if (($Proj -eq "Woolworths NZ")){
+    if (($Proj -eq "your-project")){
 
         if (-not (Test-Path -Path ".\$Proj" -PathType Container)) {
             New-Item -Path $Proj -ItemType Directory |
