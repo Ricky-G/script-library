@@ -1,6 +1,27 @@
 # Script-Library
 
-Script-Library is a collection of useful utility scripts in various programming languages that can be used to automate common tasks. The repository includes scripts for password cracking, archive extraction, connecting to Azure DevOps APIs, connecting and executing GitHub APIs, Unzipping .tar.gz files native using .NET and much more.
+Script-Library is a collection of useful utility scripts in various programming languages that can be used to automate common tasks. The repository includes scripts for password cracking, archive extraction, connecting to Azure DevOps APIs, connecting and executing GitHub APIs, exploring TFS TFVC repositories, unzipping .tar.gz files native using .NET and much more.
+
+## 📊 Script Overview
+
+| Category | Script | Purpose | Language |
+|----------|--------|---------|----------|
+| **🔧 TFS/TFVC** | [`TFS-TFVCTopLevelFolders.ps1`](#tfs-tfvctoplevelfolders.ps1) | List all top-level TFVC folders across projects | PowerShell |
+| | [`TFS-TFVCRepositoryLister.ps1`](#tfs-tfvcrepositorylister.ps1) | Configurable TFVC folder discovery | PowerShell |
+| | [`TFS-TFVCRepositoryExplorer.ps1`](#tfs-tfvcrepositoryexplorer.ps1) | Advanced TFVC exploration with tree view | PowerShell |
+| | [`TFS-UniqueCommiters.ps1`](#tfs-uniquecommiters.ps1) | Find unique committers across TFS repositories | PowerShell |
+| **☁️ Azure DevOps** | [`AzureDevOps-RepoCloner.ps1`](#azuredevopsrepocloner.ps1) | Clone all repositories from Azure DevOps org | PowerShell |
+| | [`AzureDevops-UniqueCommiters.ps1`](#azuredevops-uniquecommiters.ps1) | Find unique committers in Azure DevOps | PowerShell |
+| | [`AzureDevOps-BuildStats.ps1`](#azuredevops-buildstats.ps1) | Analyze build statistics and metrics | PowerShell |
+| | [`AzureDevOps-CommitStats.ps1`](#azuredevops-commitstats.ps1) | Analyze commit statistics and patterns | PowerShell |
+| | [`AzureDevOps-PipelineStats.ps1`](#azuredevops-pipelinestats.ps1) | Analyze pipeline performance metrics | PowerShell |
+| | [`AzureDevOps-PullRequestStats.ps1`](#azuredevops-pullrequeststats.ps1) | Analyze pull request statistics | PowerShell |
+| **🐙 GitHub** | [`GitHub-BulkRepoCreator.ps1`](#github-bulkrepocreator.ps1) | Bulk create GitHub repositories | PowerShell |
+| | [`GitHub-BulkRepoDeleter.ps1`](#github-bulkrepodeleter.ps1) | Bulk delete GitHub repositories | PowerShell |
+| | [`GitHub-RepoPopulator.ps1`](#github-repopopulator.ps1) | Populate repositories with README files | PowerShell |
+| **📊 Azure Monitoring** | [`SendCustomLogDataToLogAnalytics.ps1`](#sendcustomlogdatatologanalytics.ps1) | Send custom data to Azure Log Analytics | PowerShell |
+| **🔐 Security/Utilities** | [`7ZipArchiveCracker.ps1`](#7ziparchivecracker.ps1) | Password crack 7-Zip archives | PowerShell |
+| | [`KillExistingConsoleApp.bat`](#killexistingconsoleapp.bat) | Terminate running console applications | Batch |
 
 ## Contributing
 
@@ -11,6 +32,21 @@ All contributions welcome! If you have any ideas for new scripts or improvements
 This repository is licensed under the MIT License. See the [LICENSE](LICENSE) file for more information.
 
 ## Files
+
+### TFS TFVC Repository Scripts (New!)
+
+A comprehensive collection of PowerShell scripts for exploring and managing Team Foundation Version Control (TFVC) repositories in TFS/Azure DevOps Server. These scripts solve the challenge of listing and analyzing TFVC folder structures, which differ significantly from Git's repository model.
+
+#### TFS-TFVCTopLevelFolders.ps1
+Quick and simple script to list all top-level TFVC folders across all projects. Features interactive export options (CSV, JSON, HTML) and progress tracking. Perfect for getting a quick overview of all TFVC repositories in your TFS instance.
+
+#### TFS-TFVCRepositoryLister.ps1
+Configurable script with command-line parameters for customized TFVC folder discovery. Supports multiple recursion levels, item count statistics, and various output formats. Ideal for automated reporting and CI/CD integration.
+
+#### TFS-TFVCRepositoryExplorer.ps1
+Advanced exploration tool with tree view visualization, pattern-based filtering, and change history tracking. Supports deep folder traversal with configurable depth limits. Best for detailed repository analysis and finding specific folder structures.
+
+See [TFS-TFVC-Scripts-README.md](TFS-TFVC-Scripts-README.md) for detailed documentation and usage examples.
 
 ### TFS-UniqueCommiters.ps1
 
